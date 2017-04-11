@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <script>
+
+        // Enter the nth number in the fibonacci sequence
+        function fibonacci(n) {
+            if (n < 2) {
+                return 1;
+            } else {
+                return fibonacci(n - 2) + fibonacci(n - 1);
+            }
+        }
+
+        // Hook up a function to the button's click event
+        $(document).ready(function () {
+            $("#btn").click(function () {
+
+                // Get the value entered into the textbox
+                var nstr = $("#nth").val();
+
+                // Store the what will be shown the user here
+                var n = "";
+
+                // Check if the user entered a number
+                if (isNaN(nstr)) {
+                    n = "position must be an integer";
+                }
+                // Check if the number is an integer
+                else if (Math.floor(nstr) != nstr) {
+                    n = "position must be an integer";
+                }
+                // If we got this far, it's a number, and an integer. Calculate the fibonacci value
+                else {
+                    n = fibonacci(nstr);
+                }
+
+                // Update the result text with the message
+                $("#fib").text("Fibonacci number: " + n);//+ );
+            });
+        });
+    </script>
+
+    <title></title>
+</head>
+<body>
+
+    <p ><h3>Client-side calculation of nth fibonacci number</h3></p>
+
+
+
+    <input type="text" id="nth" class="form-control" id="usr">
+
+    <br />
+    <p id="fib">Fibonacci number: </p>
+    <br />
+    <button type="button" id ="btn" class="btn btn-primary">Calculate</button>
+
+
+</body>
+</html>

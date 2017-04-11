@@ -1,0 +1,17 @@
+{
+  "name": "node-jslearnings",
+  "version": "0.0.0",
+  "description": "NodeJSLearnings",
+  "main": "server.js",
+  "author": {
+    "name": "owner"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "consolidate": "^0.14.5",
+    "express": "^4.15.2",
+    "jquery": "^3.2.1",
+    "mustache": "^2.3.0",
+    "querystring": "^0.2.0"
+  }
+}
